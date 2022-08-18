@@ -1,0 +1,356 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Consolas;}{\f2\fnil\fcharset0 Consolas;}}
+{\colortbl ;\red127\green0\blue85;\red0\green0\blue0;\red0\green0\blue192;\red106\green62\blue62;\red100\green100\blue100;\red42\green0\blue255;\red0\green128\blue128;\red63\green127\blue127;\red127\green0\blue127;\red0\green0\blue255;\red38\green139\blue210;\red147\green161\blue161;\red42\green161\blue152;\red212\green212\blue212;}
+{\*\generator Riched20 10.0.22000}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+\b\fs44 Question-2\b0\fs22\par
+\b\fs36 Constructor Based Dependency Injection\b0\fs22\par
+\b\fs28 Main Class\b0\fs22\par
+package com.constructor_DI;\par
+import org.springframework.context.ApplicationContext;\par
+import org.springframework.context.support.ClassPathXmlApplicationContext;\par
+public class Main \{\par
+\tab public static void main(String [] args)\{\par
+\tab\tab ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");\par
+\tab\tab Country c=(Country)context.getBean("country");\par
+\tab\tab System.out.println("Democratic country is:"+c.getDemocratic());\par
+\tab\tab System.out.println("Non_Democratic country is:"+c.getNon_democratic());\par
+\tab\tab System.out.println(c.getAsian());\par
+\tab\}\par
+\}\par
+\b\fs36 Country Class\fs28\par
+\cf1\f1\fs24 package\cf2\b0  com.constructor_DI;\cf0\par
+\cf1\b public\cf2\b0  \cf1\b class\cf2\b0  Country \{\cf0\par
+\cf2\tab\cf1\b private\cf2\b0  String \cf3 democratic\cf2 ;\cf0\par
+\cf2\tab\cf1\b private\cf2\b0  String \cf3 non_democratic\cf2 ;\cf0\par
+\cf2\tab\cf1\b private\cf2\b0  Asian \cf3 asian\cf2 ;\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  Asian getAsian() \{\cf0\par
+\cf2\tab\tab\cf1\b return\cf2\b0  \cf3 asian\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  \cf1\b void\cf2\b0  setAsian(Asian \cf4 asian\cf2 ) \{\cf0\par
+\cf2\tab\tab\cf1\b this\cf2\b0 .\cf3 asian\cf2  = \cf4 asian\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  Country(String \cf4 democratic\cf2 , String \cf4 non_democratic\cf2 ) \{\cf0\par
+\cf2\tab\tab\cf1\b super\cf2\b0 ();\cf0\par
+\cf2\tab\tab\cf1\b this\cf2\b0 .\cf3 democratic\cf2  = \cf4 democratic\cf2 ;\cf0\par
+\cf2\tab\tab\cf1\b this\cf2\b0 .\cf3 non_democratic\cf2  = \cf4 non_democratic\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  String getDemocratic() \{\cf0\par
+\cf2\tab\tab\cf1\b return\cf2\b0  \cf3 democratic\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  \cf1\b void\cf2\b0  setDemocratic(String \cf4 democratic\cf2 ) \{\cf0\par
+\cf2\tab\tab\cf1\b this\cf2\b0 .\cf3 democratic\cf2  = \cf4 democratic\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  String getNon_democratic() \{\cf0\par
+\cf2\tab\tab\cf1\b return\cf2\b0  \cf3 non_democratic\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  \cf1\b void\cf2\b0  setNon_democratic(String \cf4 non_democratic\cf2 ) \{\cf0\par
+\cf2\tab\tab\cf1\b this\cf2\b0 .\cf3 non_democratic\cf2  = \cf4 non_democratic\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  Country() \{\cf0\par
+\cf2\tab\tab\cf1\b super\cf2\b0 ();\cf0\par
+\cf2\tab\}\tab\cf0\par
+\cf2\}\par
+\b\f2\fs32\lang1033 Asian Class\f1\fs28\lang9\par
+\cf1\fs24 package\cf2\b0  com.constructor_DI;\cf0\par
+\cf1\b public\cf2\b0  \cf1\b class\cf2\b0  Asian \{\cf0\par
+\cf2\tab\cf1\b private\cf2\b0  String \cf3 currency\cf2 ;\cf0\par
+\cf2\tab\cf1\b private\cf2\b0  String \cf3 language\cf2 ;\cf0\par
+\cf2\tab\cf1\b private\cf2\b0  String \cf3 culture\cf2 ;\cf0\par
+\cf2\tab\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  Asian(String \cf4 currency\cf2 , String \cf4 language\cf2 , String \cf4 culture\cf2 ) \{\cf0\par
+\cf2\tab\tab\cf1\b super\cf2\b0 ();\cf0\par
+\cf2\tab\tab\cf1\b this\cf2\b0 .\cf3 currency\cf2  = \cf4 currency\cf2 ;\cf0\par
+\cf2\tab\tab\cf1\b this\cf2\b0 .\cf3 language\cf2  = \cf4 language\cf2 ;\cf0\par
+\cf2\tab\tab\cf1\b this\cf2\b0 .\cf3 culture\cf2  = \cf4 culture\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  String getCurrency() \{\cf0\par
+\cf2\tab\tab\cf1\b return\cf2\b0  \cf3 currency\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  \cf1\b void\cf2\b0  setCurrency(String \cf4 currency\cf2 ) \{\cf0\par
+\cf2\tab\tab\cf1\b this\cf2\b0 .\cf3 currency\cf2  = \cf4 currency\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  String getLanguage() \{\cf0\par
+\cf2\tab\tab\cf1\b return\cf2\b0  \cf3 language\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  \cf1\b void\cf2\b0  setLanguage(String \cf4 language\cf2 ) \{\cf0\par
+\cf2\tab\tab\cf1\b this\cf2\b0 .\cf3 language\cf2  = \cf4 language\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  String getCulture() \{\cf0\par
+\cf2\tab\tab\cf1\b return\cf2\b0  \cf3 culture\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  \cf1\b void\cf2\b0  setCulture(String \cf4 culture\cf2 ) \{\cf0\par
+\cf2\tab\tab\cf1\b this\cf2\b0 .\cf3 culture\cf2  = \cf4 culture\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf5 @Override\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  String toString() \{\cf0\par
+\cf2\tab\tab\cf1\b return\cf2\b0  \cf6 "Asian [currency="\cf2  + \cf3 currency\cf2  + \cf6 ", language="\cf2  + \cf3 language\cf2  + \cf6 ", culture="\cf2  + \cf3 culture\cf2  + \cf6 "]"\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\}\par
+\par
+\b\f2\fs36\lang1033 bean.xml File\b0\f1\fs24\lang9\par
+\cf7 <?\cf8 xml\cf0  \cf9 version\cf2 =\cf6\i "1.0"\cf0\i0  \cf9 encoding\cf2 =\cf6\i "UTF-8"\cf7\i0 ?>\cf0\par
+\cf7 <\cf8 beans\cf0  \cf9 xmlns\cf0  \cf2 =\cf0  \cf6\i "{\cf0{\field{\*\fldinst{HYPERLINK http://www.springframework.org/schema/beans }}{\fldrslt{http://www.springframework.org/schema/beans\ul0\cf0}}}}\f1\fs24 "\cf0\i0\par
+   \cf9 xmlns:xsi\cf0  \cf2 =\cf0  \cf6\i "{\cf0{\field{\*\fldinst{HYPERLINK http://www.w3.org/2001/XMLSchema-instance }}{\fldrslt{http://www.w3.org/2001/XMLSchema-instance\ul0\cf0}}}}\f1\fs24 "\cf0\i0\par
+   \cf9 xsi:schemaLocation\cf0  \cf2 =\cf0  \cf6\i "{\cf0{\field{\*\fldinst{HYPERLINK http://www.springframework.org/schema/beans }}{\fldrslt{http://www.springframework.org/schema/beans\ul0\cf0}}}}\cf0\i0\f1\fs24\par
+\cf6\i    {\cf0{\field{\*\fldinst{HYPERLINK http://www.springframework.org/schema/beans/spring-beans-3.0.xsd }}{\fldrslt{http://www.springframework.org/schema/beans/spring-beans-3.0.xsd\ul0\cf0}}}}\f1\fs24 "\cf7\i0 >\cf0\par
+\cf2    \cf7 <\cf8 bean\cf0  \cf9 id\cf2 =\cf6\i "asian"\cf0\i0  \cf9 class\cf0  \cf2 =\cf6\i "com.constructor_DI.Asian"\cf0\i0  \cf7 >\cf0\par
+\cf7 <\cf8 constructor-arg\cf0  \cf9 name\cf2 =\cf6\i "currency"\cf0\i0  \cf9 value\cf2 =\cf6\i "rupees"\cf7\i0 ></\cf8 constructor-arg\cf7 >\cf0\par
+\cf7 <\cf8 constructor-arg\cf0  \cf9 name\cf2 =\cf6\i "language"\cf0\i0  \cf9 value\cf2 =\cf6\i "Hindi"\cf7\i0 ></\cf8 constructor-arg\cf7 >\cf0\par
+\cf7 <\cf8 constructor-arg\cf0  \cf9 name\cf2 =\cf6\i "culture"\cf0\i0  \cf9 value\cf2 =\cf6\i "western"\cf7\i0 ></\cf8 constructor-arg\cf7 >\cf0\par
+\cf2       \cf7 </\cf8 bean\cf7 >\cf0\par
+\cf7 <\cf8 bean\cf0  \cf9 id\cf2 =\cf6\i "country"\cf0\i0  \cf9 class\cf0  \cf2 =\cf6\i "com.constructor_DI.Country"\cf7\i0 >\cf2  \cf7 <\cf8 constructor-arg\cf0  \cf9 name\cf2 =\cf6\i "democratic"\cf0\i0  \cf9 value\cf2 =\cf6\i "America"\cf7\i0 ></\cf8 constructor-arg\cf7 >\cf0\par
+\cf7 <\cf8 constructor-arg\cf0  \cf9 name\cf2 =\cf6\i "non_democratic"\cf0\i0  \cf9 value\cf2 =\cf6\i "China"\cf7\i0 </\cf8 constructor-arg\cf7 >\cf0\par
+\cf7 <\cf8 constructor-arg\cf0  \cf9 name\cf2 =\cf6\i "asian"\cf0\i0   \cf9 ref\cf2 =\cf6\i "asian"\cf7\i0 ></\cf8 constructor-arg\cf7 </\cf8 bean\cf7 >\cf0\par
+\cf2    \cf7 </\cf8 beans\cf7 >\cf0\par
+\b\f2\fs36\lang1033 pom.xml File\par
+\cf2\b0\f1\fs24 <\cf11 project\cf2  \cf12 xmlns\cf2 =\cf12 "{\cf13{\field{\*\fldinst{HYPERLINK http://maven.apache.org/POM/4.0.0 }}{\fldrslt{http://maven.apache.org/POM/4.0.0\ul0\cf0}}}}\f1\fs24 "\cf2  \cf12 xmlns:xsi\cf2 =\cf12 "\cf13 http://www.w3.org/2001/XMLSchema-instance\cf12 "\cf2  \cf12 xsi:schemaLocation\cf2 =\cf12 "\cf13 http://maven.apache.org/POM/4.0.0 {\cf0{\field{\*\fldinst{HYPERLINK https://maven.apache.org/xsd/maven-4.0.0.xsd }}{\fldrslt{https://maven.apache.org/xsd/maven-4.0.0.xsd\ul0\cf0}}}}\cf12\f1\fs24 "\cf2 >\cf0\par
+\cf2   <\cf11 modelVersion\cf2 >4.0.0</\cf11 modelVersion\cf2 >\cf0\par
+\cf2   <\cf11 groupId\cf2 >com.milestone2.constructor</\cf11 groupId\cf2 >\cf0\par
+\cf2   <\cf11 artifactId\cf2 >constructor_DI</\cf11 artifactId\cf2 >\cf0\par
+\cf2   <\cf11 version\cf2 >0.0.1-SNAPSHOT</\cf11 version\cf2 >\cf0\par
+\cf2 <\cf11 dependencies\cf2 >\cf0\par
+\cf2 <\cf11 dependency\cf2 >\cf0\par
+\cf2       <\cf11 groupId\cf2 >org.springframework</\cf11 groupId\cf2 >\cf0\par
+\cf2       <\cf11 artifactId\cf2 >spring-context</\cf11 artifactId\cf2 >\cf0\par
+\cf2       <\cf11 version\cf2 >5.1.0.RELEASE</\cf11 version\cf2 >\cf0\par
+\cf2   </\cf11 dependency\cf2 >\cf0\par
+\cf2 </\cf11 dependencies\cf2 >\cf0\par
+\cf2 <\cf11 properties\cf2 >\cf0\par
+\cf2 <\cf11 org.springframework-version\cf2 >5.1.0.RELEASE</\cf11 org.springframework-version\cf2 >\cf0\par
+\cf2 </\cf11 properties\cf2 >\cf0\par
+\cf2 </\cf11 project\cf2 >\cf0\f2\lang9\par
+\f0\fs22\par
+\b\fs36 Setter Based Dependency Injection\par
+Main class\par
+\b0\fs24 package com.milestone_setter_DI;\par
+import org.springframework.context.ApplicationContext;\par
+import org.springframework.context.support.ClassPathXmlApplicationContext;\par
+public class Main \{\par
+\tab public static void main(String[] args) \{\par
+\tab\tab ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");\par
+\tab\tab Food f=(Food)context.getBean("food");\par
+\tab\tab System.out.println("Starter is:" +f.getStarter());\par
+\tab\tab System.out.println("Main Course is:"+f.getMainCourse());\par
+\tab\tab System.out.println("Dessert is:"+f.getDesserts());\par
+\tab\tab System.out.println("Non Veg Food avilable is:"+f.getNonveg());\par
+\tab\}\par
+\}\par
+\par
+\b\fs28 Food Class\b0\fs24\par
+\cf1\b\f1 package\cf2\b0  com.milestone_setter_DI;\cf0\par
+\par
+\cf1\b public\cf2\b0  \cf1\b class\cf2\b0  Food \{\cf0\par
+\cf2\tab\cf1\b private\cf2\b0  String desserts;\cf0\par
+\cf2\tab\cf1\b private\cf2\b0  String mainCourse;\cf0\par
+\cf2\tab\cf1\b private\cf2\b0  String Starter;\cf0\par
+\cf2\tab\cf1\b private\cf2\b0  NonVeg nonveg;\cf0\par
+\cf2\tab\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  \highlight14 NonVeg\highlight0  getNonveg() \{\cf0\par
+\cf2\tab\tab\cf1\highlight14\b return\cf2\b0  nonveg;\cf0\highlight0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  \cf1\b void\cf2\b0  setNonveg(NonVeg nonveg) \{\cf0\par
+\cf2\tab\tab\cf1\b this\cf2\b0 .nonveg = nonveg;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  String getDesserts() \{\cf0\par
+\cf2\tab\tab\cf1\b return\cf2\b0  desserts;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  \cf1\b void\cf2\b0  setDesserts(String desserts) \{\cf0\par
+\cf2\tab\tab\cf1\b this\cf2\b0 .desserts = desserts;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  String getMainCourse() \{\cf0\par
+\cf2\tab\tab\cf1\b return\cf2\b0  mainCourse;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  \cf1\b void\cf2\b0  setMainCourse(String mainCourse) \{\cf0\par
+\cf2\tab\tab\cf1\b this\cf2\b0 .mainCourse = mainCourse;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  String getStarter() \{\cf0\par
+\cf2\tab\tab\cf1\b return\cf2\b0  Starter;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  \cf1\b void\cf2\b0  setStarter(String starter) \{\cf0\par
+\cf2\tab\tab Starter = starter;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\}\cf0\par
+\b\f0\fs36 Non Veg Class\par
+\cf1\f1\fs24 package\cf2\b0  com.milestone_setter_DI;\cf0\par
+\par
+\cf1\b public\cf2\b0  \cf1\b class\cf2\b0  NonVeg \{\cf0\par
+\cf2\tab\cf1\b private\cf2\b0  String \cf3 Chicken\cf2 ;\cf0\par
+\cf2\tab\cf1\b private\cf2\b0  String \cf3 Fish\cf2 ;\cf0\par
+\cf2\tab\cf1\b private\cf2\b0  String \cf3 Mutton\cf2 ;\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  String getChicken() \{\cf0\par
+\cf2\tab\tab\cf1\b return\cf2\b0  \cf3 Chicken\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  \cf1\b void\cf2\b0  setChicken(String \cf4 chicken\cf2 ) \{\cf0\par
+\cf2\tab\tab\cf3 Chicken\cf2  = \cf4 chicken\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  String getFish() \{\cf0\par
+\cf2\tab\tab\cf1\b return\cf2\b0  \cf3 Fish\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  \cf1\b void\cf2\b0  setFish(String \cf4 fish\cf2 ) \{\cf0\par
+\cf2\tab\tab\cf3 Fish\cf2  = \cf4 fish\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  String getMutton() \{\cf0\par
+\cf2\tab\tab\cf1\b return\cf2\b0  \cf3 Mutton\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  \cf1\b void\cf2\b0  setMutton(String \cf4 mutton\cf2 ) \{\cf0\par
+\cf2\tab\tab\cf3 Mutton\cf2  = \cf4 mutton\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\}\cf0\par
+\b\f0\fs36 bean.xml File\par
+\cf7\b0\f1\fs24 <?\cf8 xml\cf0  \cf9 version\cf2 =\cf6\i "1.0"\cf0\i0  \cf9 encoding\cf2 =\cf6\i "UTF-8"\cf7\i0 ?>\cf0\par
+\cf7 <\cf8 beans\cf0  \cf9 xmlns\cf0  \cf2 =\cf0  \cf6\i "{\cf0{\field{\*\fldinst{HYPERLINK http://www.springframework.org/schema/beans }}{\fldrslt{http://www.springframework.org/schema/beans\ul0\cf0}}}}\f1\fs24 "\cf0\i0\par
+   \cf9 xmlns:xsi\cf0  \cf2 =\cf0  \cf6\i "{\cf0{\field{\*\fldinst{HYPERLINK http://www.w3.org/2001/XMLSchema-instance }}{\fldrslt{http://www.w3.org/2001/XMLSchema-instance\ul0\cf0}}}}\f1\fs24 "\cf0\i0\par
+   \cf9 xsi:schemaLocation\cf0  \cf2 =\cf0  \cf6\i "{\cf0{\field{\*\fldinst{HYPERLINK http://www.springframework.org/schema/beans }}{\fldrslt{http://www.springframework.org/schema/beans\ul0\cf0}}}}\cf0\i0\f1\fs24\par
+\cf6\i    {\cf0{\field{\*\fldinst{HYPERLINK http://www.springframework.org/schema/beans/spring-beans-3.0.xsd }}{\fldrslt{http://www.springframework.org/schema/beans/spring-beans-3.0.xsd\ul0\cf0}}}}\f1\fs24 "\cf7\i0 >\cf0\par
+\cf2    \cf0\par
+\cf2    \cf7 <\cf8 bean\cf0  \cf9 id\cf2 =\cf6\i "food"\cf0\i0  \cf9 class\cf0  \cf2 =\cf6\i "com.milestone_setter_DI.Food"\cf0\i0  \cf7 >\cf0\par
+\cf2    \cf7 <\cf8 property\cf0  \cf9 name\cf2 =\cf6\i "desserts"\cf0\i0  \cf9 value\cf2 =\cf6\i "Gulab jamun"\cf7\i0 ></\cf8 property\cf7 >\cf0\par
+\cf2    \cf7 <\cf8 property\cf0  \cf9 name\cf2 =\cf6\i "mainCourse"\cf0\i0  \cf9 value\cf2 =\cf6\i "Kadhai Paneer"\cf7\i0 ></\cf8 property\cf7 >\cf0\par
+\cf2    \cf7 <\cf8 property\cf0  \cf9 name\cf2 =\cf6\i "starter"\cf0\i0  \cf9 value\cf2 =\cf6\i "Soup"\cf7\i0 ></\cf8 property\cf7 >\cf0\par
+\cf2    \cf7 <\cf8 property\cf0  \cf9 name\cf2 =\cf6\i "nonveg"\cf0\i0  \cf9 ref\cf2 =\cf6\i "nonveg"\cf7\i0 ></\cf8 property\cf7 ></\cf8 bean\cf7 >\cf0\par
+\cf2    \cf0\par
+\cf2    \cf7 <\cf8 bean\cf0  \cf9 id\cf2 =\cf6\i "nonveg"\cf0\i0  \cf9 class\cf0  \cf2 =\cf6\i "com.milestone_setter_DI.NonVeg"\cf0\i0  \cf7 >\cf0\par
+\cf2    \cf7 <\cf8 property\cf0  \cf9 name\cf2 =\cf6\i "chicken"\cf0\i0  \cf9 value\cf2 =\cf6\i "Fried"\cf7\i0 ></\cf8 property\cf7 >\cf0\par
+\cf2    \cf7 <\cf8 property\cf0  \cf9 name\cf2 =\cf6\i "fish"\cf0\i0  \cf9 value\cf2 =\cf6\i "Spicy"\cf7\i0 ></\cf8 property\cf7 >\cf0\par
+\cf2    \cf7 <\cf8 property\cf0  \cf9 name\cf2 =\cf6\i "mutton"\cf0\i0  \cf9 value\cf2 =\cf6\i "Gravy"\cf7\i0 ></\cf8 property\cf7 ></\cf8 bean\cf7 >\cf0\par
+\cf2    \cf7 </\cf8 beans\cf7 >\cf0\b\f0\fs36\par
+pom.xml File\par
+\cf2\b0\f1\fs24 <\cf11 project\cf2  \cf12 xmlns\cf2 =\cf12 "{\cf13{\field{\*\fldinst{HYPERLINK http://maven.apache.org/POM/4.0.0 }}{\fldrslt{http://maven.apache.org/POM/4.0.0\ul0\cf0}}}}\f1\fs24 "\cf2  \cf12 xmlns:xsi\cf2 =\cf12 "\cf13 http://www.w3.org/2001/XMLSchema-instance\cf12 "\cf2  \cf12 xsi:schemaLocation\cf2 =\cf12 "\cf13 http://maven.apache.org/POM/4.0.0 {\cf0{\field{\*\fldinst{HYPERLINK https://maven.apache.org/xsd/maven-4.0.0.xsd }}{\fldrslt{https://maven.apache.org/xsd/maven-4.0.0.xsd\ul0\cf0}}}}\cf12\f1\fs24 "\cf2 >\cf0\par
+\cf2   <\cf11 modelVersion\cf2 >4.0.0</\cf11 modelVersion\cf2 >\cf0\par
+\cf2   <\cf11 groupId\cf2 >com.setter.DI</\cf11 groupId\cf2 >\cf0\par
+\cf2   <\cf11 artifactId\cf2 >setter_DI</\cf11 artifactId\cf2 >\cf0\par
+\cf2   <\cf11 version\cf2 >0.0.1-SNAPSHOT</\cf11 version\cf2 >\cf0\par
+\cf2 <\cf11 dependencies\cf2 >\cf0\par
+\cf2 <\cf11 dependency\cf2 >\cf0\par
+\cf2       <\cf11 groupId\cf2 >org.springframework</\cf11 groupId\cf2 >\cf0\par
+\cf2       <\cf11 artifactId\cf2 >spring-context</\cf11 artifactId\cf2 >\cf0\par
+\cf2       <\cf11 version\cf2 >5.1.0.RELEASE</\cf11 version\cf2 >\cf0\par
+\cf2 </\cf11 dependency\cf2 >\cf0\par
+\cf2 </\cf11 dependencies\cf2 >\cf0\par
+\cf2 <\cf11 properties\cf2 >\cf0\par
+\cf2     <\cf11 org.springframework-version\cf2 >5.1.0.RELEASE</\cf11 org.springframework-version\cf2 >\cf0\par
+\cf2 </\cf11 properties\cf2 >\cf0\par
+\cf2 </\cf11 project\cf2 >\par
+\par
+\b\f2\fs40\lang1033 Field or property based Dependency Injection\b0\fs24\par
+\b Main Class\b0\par
+package com.field_based_DI;\par
+\par
+import org.springframework.context.ApplicationContext;\par
+import org.springframework.context.support.ClassPathXmlApplicationContext;\par
+\par
+public class Main \{\par
+\par
+\tab public static void main(String[] args) \{\par
+\tab\tab ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");\par
+\tab\tab Doctor d=(Doctor)context.getBean("doctor");\par
+\tab\tab\par
+\tab\tab System.out.println("Cardiologist is specialist of:"+d.getCardiologist());\par
+\tab\tab System.out.println("Gynaecologist is specialist of:"+d.getGynaecologist());\par
+\tab\tab System.out.println("Neurologist is specialist of:"+d.getNeurologist());\par
+\tab\tab System.out.println(d.getMedicine());\par
+\tab\}\par
+\}\par
+\par
+\b\fs28 Doctor Class\b0\fs24\par
+\cf1\b\f1 package\cf2\b0  com.field_based_DI;\cf0\par
+\par
+\cf1\b public\cf2\b0  \cf1\b class\cf2\b0  Doctor \{\cf0\par
+\cf2\tab\cf1\b private\cf2\b0  String Gynaecologist;\cf0\par
+\cf2\tab\cf1\b private\cf2\b0  String Neurologist;\cf0\par
+\cf2\tab\cf1\b private\cf2\b0  String Cardiologist;\cf0\par
+\cf2\tab\cf1\b private\cf2\b0  Medicine medicine;\cf0\par
+\cf2\tab\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  Medicine getMedicine() \{\cf0\par
+\cf2\tab\tab\cf1\b return\cf2\b0  medicine;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  \cf1\b void\cf2\b0  setMedicine(Medicine medicine) \{\cf0\par
+\cf2\tab\tab\cf1\b this\cf2\b0 .medicine = medicine;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  String getGynaecologist() \{\cf0\par
+\cf2\tab\tab\cf1\b return\cf2\b0  Gynaecologist;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  \cf1\b void\cf2\b0  setGynaecologist(String gynaecologist) \{\cf0\par
+\cf2\tab\tab Gynaecologist = gynaecologist;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  String getNeurologist() \{\cf0\par
+\cf2\tab\tab\cf1\b return\cf2\b0  Neurologist;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  \cf1\b void\cf2\b0  setNeurologist(String neurologist) \{\cf0\par
+\cf2\tab\tab Neurologist = neurologist;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  String getCardiologist() \{\cf0\par
+\cf2\tab\tab\cf1\b return\cf2\b0  Cardiologist;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  \cf1\b void\cf2\b0  setCardiologist(String cardiologist) \{\cf0\par
+\cf2\tab\tab Cardiologist = cardiologist;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\}\par
+\par
+\b\f2\fs28 Medicine Class\b0\fs24\par
+\cf1\b\f1 package\cf2\b0  com.field_based_DI;\cf0\par
+\par
+\cf1\b public\cf2\b0  \cf1\b class\cf2\b0  Medicine \{\cf0\par
+\cf2\tab\cf1\b private\cf2\b0  String \cf3 fever\cf2 ;\cf0\par
+\cf2\tab\cf1\b private\cf2\b0  String \cf3 cold\cf2 ;\cf0\par
+\cf2\tab\cf1\b private\cf2\b0  String \cf3 headache\cf2 ;\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  String getFever() \{\cf0\par
+\cf2\tab\tab\cf1\b return\cf2\b0  \cf3 fever\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  \cf1\b void\cf2\b0  setFever(String \cf4 fever\cf2 ) \{\cf0\par
+\cf2\tab\tab\cf1\b this\cf2\b0 .\cf3 fever\cf2  = \cf4 fever\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  String getCold() \{\cf0\par
+\cf2\tab\tab\cf1\b return\cf2\b0  \cf3 cold\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  \cf1\b void\cf2\b0  setCold(String \cf4 cold\cf2 ) \{\cf0\par
+\cf2\tab\tab\cf1\b this\cf2\b0 .\cf3 cold\cf2  = \cf4 cold\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  String getHeadache() \{\cf0\par
+\cf2\tab\tab\cf1\b return\cf2\b0  \cf3 headache\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\tab\cf1\b public\cf2\b0  \cf1\b void\cf2\b0  setHeadache(String \cf4 headache\cf2 ) \{\cf0\par
+\cf2\tab\tab\cf1\b this\cf2\b0 .\cf3 headache\cf2  = \cf4 headache\cf2 ;\cf0\par
+\cf2\tab\}\cf0\par
+\cf2\}\cf0\b\fs28\par
+\f2 bean.xml File\par
+\b0\fs24  \cf7\f1 <?\cf8 xml\cf0  \cf9 version\cf2 =\cf6\i "1.0"\cf0\i0  \cf9 encoding\cf2 =\cf6\i "UTF-8"\cf7\i0 ?>\cf0\par
+\cf7 <\cf8 beans\cf0  \cf9 xmlns\cf0  \cf2 =\cf0  \cf6\i "{\cf0{\field{\*\fldinst{HYPERLINK http://www.springframework.org/schema/beans }}{\fldrslt{http://www.springframework.org/schema/beans\ul0\cf0}}}}\f1\fs24 "\cf0\i0\par
+   \cf9 xmlns:xsi\cf0  \cf2 =\cf0  \cf6\i "{\cf0{\field{\*\fldinst{HYPERLINK http://www.w3.org/2001/XMLSchema-instance }}{\fldrslt{http://www.w3.org/2001/XMLSchema-instance\ul0\cf0}}}}\f1\fs24 "\cf0\i0\par
+   \cf9 xsi:schemaLocation\cf0  \cf2 =\cf0  \cf6\i "{\cf0{\field{\*\fldinst{HYPERLINK http://www.springframework.org/schema/beans }}{\fldrslt{http://www.springframework.org/schema/beans\ul0\cf0}}}}\cf0\i0\f1\fs24\par
+\cf6\i    {\cf0{\field{\*\fldinst{HYPERLINK http://www.springframework.org/schema/beans/spring-beans-3.0.xsd }}{\fldrslt{http://www.springframework.org/schema/beans/spring-beans-3.0.xsd\ul0\cf0}}}}\f1\fs24 "\cf7\i0 >\cf0\par
+\cf2    \cf0\par
+\cf2    \cf7 <\cf8 bean\cf0  \cf9 id\cf2 =\cf6\i "Medicine"\cf0\i0  \cf9 class\cf0  \cf2 =\cf6\i "com.field_based_DI.Medicine"\cf0\i0  \cf7 >\cf0\par
+\cf2    \cf7 <\cf8 property\cf0  \cf9 name\cf2 =\cf6\i "fever"\cf0\i0  \cf9 value\cf2 =\cf6\i "Dolo"\cf7\i0 ></\cf8 property\cf7 >\cf0\par
+\cf2    \cf7 <\cf8 property\cf0  \cf9 name\cf2 =\cf6\i "cold"\cf0\i0  \cf9 value\cf2 =\cf6\i "Antibiotics"\cf7\i0 ></\cf8 property\cf7 >\cf0\par
+\cf2    \cf7 <\cf8 property\cf0  \cf9 name\cf2 =\cf6\i "headache"\cf0\i0  \cf9 value\cf2 =\cf6\i "Diclofenac"\cf7\i0 ></\cf8 property\cf7 >\cf0\par
+\cf2    \cf7 </\cf8 bean\cf7 >\cf0\par
+\cf2    \cf0\par
+\cf2    \cf7 <\cf8 bean\cf0  \cf9 id\cf2 =\cf6\i "Doctor"\cf0\i0  \cf9 class\cf0  \cf2 =\cf6\i "com.field_based_DI.Doctor"\cf0\i0  \cf7 >\cf0\par
+\cf2    \cf7 <\cf8 property\cf0  \cf9 name\cf2 =\cf6\i "Gynaecologist"\cf0\i0  \cf9 value\cf2 =\cf6\i "women"\cf7\i0 ></\cf8 property\cf7 >\cf0\par
+\cf2    \cf7 <\cf8 property\cf0  \cf9 name\cf2 =\cf6\i "neurologist"\cf0\i0  \cf9 value\cf2 =\cf6\i "nerves"\cf7\i0 ></\cf8 property\cf7 >\cf0\par
+\cf2    \cf7 <\cf8 property\cf0  \cf9 name\cf2 =\cf6\i "cardiologist"\cf0\i0  \cf9 value\cf2 =\cf6\i "heart"\cf7\i0 ></\cf8 property\cf7 >\cf0\par
+\cf2    \cf7 <\cf8 property\cf0  \cf9 name\cf2 =\cf6\i "Medicine"\cf0\i0  \cf9 ref\cf2 =\cf6\i "medicine"\cf7\i0 ></\cf8 property\cf7 ></\cf8 bean\cf7 >\cf0\par
+\cf2    \cf7 </\cf8 beans\cf7 >\cf0\f2\par
+\b\fs28 pom.xml File\b0\fs24\par
+\cf2\f1 <\cf11 project\cf2  \cf12 xmlns\cf2 =\cf12 "{\cf13{\field{\*\fldinst{HYPERLINK http://maven.apache.org/POM/4.0.0 }}{\fldrslt{http://maven.apache.org/POM/4.0.0\ul0\cf0}}}}\f1\fs24 "\cf2  \cf12 xmlns:xsi\cf2 =\cf12 "\cf13 http://www.w3.org/2001/XMLSchema-instance\cf12 "\cf2  \cf12 xsi:schemaLocation\cf2 =\cf12 "\cf13 http://maven.apache.org/POM/4.0.0 {\cf0{\field{\*\fldinst{HYPERLINK https://maven.apache.org/xsd/maven-4.0.0.xsd }}{\fldrslt{https://maven.apache.org/xsd/maven-4.0.0.xsd\ul0\cf0}}}}\cf12\f1\fs24 "\cf2 >\cf0\par
+\cf2   <\cf11 modelVersion\cf2 >4.0.0</\cf11 modelVersion\cf2 >\cf0\par
+\cf2   <\cf11 groupId\cf2 >com.property.DI</\cf11 groupId\cf2 >\cf0\par
+\cf2   <\cf11 artifactId\cf2 >field_based_DI</\cf11 artifactId\cf2 >\cf0\par
+\cf2   <\cf11 version\cf2 >0.0.1-SNAPSHOT</\cf11 version\cf2 >\cf0\par
+\cf2   \cf0\par
+\cf2 <\cf11 dependencies\cf2 >\cf0\par
+\cf2 <\cf11 dependency\cf2 >\cf0\par
+\cf2       <\cf11 groupId\cf2 >org.springframework</\cf11 groupId\cf2 >\cf0\par
+\cf2       <\cf11 artifactId\cf2 >spring-context</\cf11 artifactId\cf2 >\cf0\par
+\cf2       <\cf11 version\cf2 >5.1.0.RELEASE</\cf11 version\cf2 >\cf0\par
+\cf2 </\cf11 dependency\cf2 >\cf0\par
+\cf2 </\cf11 dependencies\cf2 >\cf0\par
+\cf2 <\cf11 properties\cf2 >\cf0\par
+\cf2     <\cf11 org.springframework-version\cf2 >5.1.0.RELEASE</\cf11 org.springframework-version\cf2 >\cf0\par
+\cf2 </\cf11 properties\cf2 >\cf0\par
+\cf2 </\cf11 project\cf2 >\cf0\f2\par
+\par
+\par
+}
+ 
